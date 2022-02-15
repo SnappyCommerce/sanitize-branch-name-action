@@ -4,7 +4,7 @@ const github = require('@actions/github');
 try {
 	const branchName = core.getInput('branch-name');
 	let maxLength = parseInt(core.getInput('max-length'), 10);
-	if (!maxLength || isNaN(maxLength)) maxLength = 30;
+	if (!maxLength || isNaN(maxLength)) maxLength = 64;
 
 	console.log('branch-name:', branchName);
 	const sanitizedBranchName = branchName.trim().toLowerCase().replace(/[\W_]+/g, "-").substring(0, 63);
