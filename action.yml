@@ -1,5 +1,5 @@
-name: Sanitize Git branch name
-author: YC (yeouchien@gmail.com)
+name: Sanitize and Truncate Git branch name
+author: Neil Seligmann
 description: Sanitize Git branch name to RFC-1123 standard
 branding:
   icon: bold
@@ -8,6 +8,10 @@ inputs:
   branch-name:
     description: 'Branch Name'
     required: true
+  max-length:
+    description: 'Maximum length for the branch'
+    required: false
+    default: "30"
 outputs:
   sanitized-branch-name:
     description: 'Sanitized Branch Name'
